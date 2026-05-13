@@ -1,4 +1,4 @@
-# iocage plugins
+# iocage plugins devel
 
 * [Create an unofficial iocage plugin](https://www.truenas.com/community/resources/create-an-unofficial-iocage-plugin.99/)
 * [iocage plugins](https://freebsd.github.io/iocage/plugins.html)
