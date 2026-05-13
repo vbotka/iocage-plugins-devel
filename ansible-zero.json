@@ -2,7 +2,7 @@
   "name": "ansible-zero",
   "plugin_schema": 2,
   "release": "15.0-RELEASE",
-  "artifact": "https://github.com/vbotka/iocage-plugins.git",
+  "artifact": "https://github.com/vbotka/iocage-plugins-devel.git",
     "pkgs": [
 	"python3",
 	"sudo"
