@@ -1,0 +1,56 @@
+{
+    "ansible-syslogng": {
+        "MANIFEST": "ansible-syslogng.json",
+        "name": "Ansible syslog-ng",
+        "description": "Enhanced log daemon, supporting a wide range of input and output methods: syslog, unstructured text, message queues, databases (SQL and NoSQL alike) and more.",
+        "official": false,
+        "category": "ansible",
+        "maintainer": "Vladimir Botka <vbotka@gmail.com>",
+        "homepage": "https://github.com/vbotka/ansible-collection-freebsd/wiki"
+    },
+    "ansible-test": {
+        "MANIFEST": "ansible-test.json",
+        "name": "Ansible Test",
+        "description": "Ansible Test.",
+        "official": false,
+        "category": "ansible",
+        "maintainer": "Vladimir Botka <vbotka@gmail.com>",
+        "homepage": "https://github.com/vbotka/ansible-collection-freebsd/wiki"
+    },
+    "ansible-zero": {
+        "MANIFEST": "ansible-zero.json",
+        "name": "Ansible Zero",
+        "description": "Ansible Client. No configuration.",
+        "official": false,
+        "category": "ansible",
+        "maintainer": "Vladimir Botka <vbotka@gmail.com>",
+        "homepage": "https://github.com/vbotka/ansible-collection-freebsd/wiki"
+    },
+    "ansible-pull-test": {
+        "MANIFEST": "ansible-pull-test.json",
+        "name": "Ansible Pull Test",
+        "description": "Ansible Pull Test.",
+        "official": false,
+        "category": "ansible",
+        "maintainer": "Vladimir Botka <vbotka@gmail.com>",
+        "homepage": "https://github.com/vbotka/ansible-collection-freebsd/wiki"
+    },
+    "ansible-pull-syslogng-client": {
+        "MANIFEST": "ansible-pull-syslogng-client.json",
+        "name": "Ansible Pull syslog-ng Client",
+        "description": "Ansible Pull syslog-ng Client.",
+        "official": false,
+        "category": "ansible",
+        "maintainer": "Vladimir Botka <vbotka@gmail.com>",
+        "homepage": "https://github.com/vbotka/ansible-collection-freebsd/wiki"
+    },
+    "ansible-pull-syslogng-server": {
+        "MANIFEST": "ansible-pull-syslogng-server.json",
+        "name": "Ansible Pull syslog-ng Server",
+        "description": "Ansible Pull syslog-ng Server.",
+        "official": false,
+        "category": "ansible",
+        "maintainer": "Vladimir Botka <vbotka@gmail.com>",
+        "homepage": "https://github.com/vbotka/ansible-collection-freebsd/wiki"
+    }
+}
