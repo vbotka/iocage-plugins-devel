@@ -6,6 +6,13 @@
 
 ## ansible-pull iocage plugins
 
+### ansible-pull-init
+Initialization.
+- Install: ansible, git, sudo
+- Run: post_install.sh
+- Repo: https://github.com/vbotka/ansible-conf-init.git
+- Example: https://ansible-collection-freebsd.readthedocs.io/en/latest/examples/TBD/example.html
+
 ### ansible-pull-syslogng-client
 Install and configure syslog-ng client.
 - Install: ansible, git, sudo, syslog-ng
