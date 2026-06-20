@@ -3,10 +3,7 @@
   "plugin_schema": 2,
   "release": "15.0-RELEASE",
   "artifact": "https://github.com/vbotka/iocage-plugins-devel.git",
-    "pkgs": [
-	"python3",
-	"sudo"
-    ],
+    "pkgs": [],
   "packagesite": "http://pkg.FreeBSD.org/${ABI}/quarterly",
   "fingerprints": {
           "plugin-default": [

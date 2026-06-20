@@ -4,6 +4,16 @@ plugin_name=$(hostname)
 ansible_custom_facts_dir="/etc/ansible/facts.d"
 net_if=$(route -n get default | awk '/interface:/ {print $2}')
 
+fix_vnet_interface() {
+    if [ -n "$net_if" ]; then
+        echo "Fixing interface: $net_if"
+        ifconfig "${net_if}" -txcsum -rxcsum
+        ifconfig "${net_if}" mtu 1400
+    else
+        echo "Warning: Could not detect default network interface. Network may fail."
+    fi
+}
+
 case "$plugin_name" in
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     ansible-pull-syslogng-client)
@@ -66,6 +76,10 @@ cat << EOF
 EOF
 EOF2
         chmod a+x "${ansible_custom_facts_dir}/iocage.fact"
+	# Apply the hardware checksum and MTU bypass.
+	fix_vnet_interface
+	# Install packages.
+	pkg install -y git py311-ansible sudo
         # Ansible needs UTF-8
         echo "LANG=en_US.UTF-8" >> /root/.profile
         echo "LC_ALL=en_US.UTF-8" >> /root/.profile
@@ -120,13 +134,7 @@ EOF
 EOF2
         chmod a+x "${ansible_custom_facts_dir}/iocage.fact"
 	# Apply the hardware checksum and MTU bypass.
-	if [ -n "$net_if" ]; then
-	    echo "Fixing interface: $net_if"
-            ifconfig ${net_if} -txcsum -rxcsum
-            ifconfig ${net_if} mtu 1400
-        else
-            echo "Warning: Could not detect default network interface. Network may fail."
-        fi
+	fix_vnet_interface
 	# Install packages.
 	pkg install -y git py311-ansible sudo
         ;;
