@@ -3,11 +3,7 @@
   "plugin_schema": 2,
   "release": "15.0-RELEASE",
   "artifact": "https://github.com/vbotka/iocage-plugins-devel.git",
-    "pkgs": [
-	"git",
-	"py311-ansible",
-	"sudo"
-    ],
+    "pkgs": [],
   "packagesite": "http://pkg.FreeBSD.org/${ABI}/quarterly",
   "fingerprints": {
           "plugin-default": [

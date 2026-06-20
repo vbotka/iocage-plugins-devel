@@ -2,6 +2,7 @@
 
 plugin_name=$(hostname)
 ansible_custom_facts_dir="/etc/ansible/facts.d"
+net_if=$(route -n get default | awk '/interface:/ {print $2}')
 
 case "$plugin_name" in
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -107,7 +108,7 @@ EOF2
 plugin_name: $plugin_name
 plugin_ip: $IOCAGE_PLUGIN_IP
 EOF
-        # Create custom facts
+        # Create custom facts.
         mkdir -p "$ansible_custom_facts_dir"
         cat << EOF2 > "${ansible_custom_facts_dir}/iocage.fact"
 #!/bin/sh
@@ -118,6 +119,16 @@ cat << EOF
 EOF
 EOF2
         chmod a+x "${ansible_custom_facts_dir}/iocage.fact"
+	# Apply the hardware checksum and MTU bypass.
+	if [ -n "$net_if" ]; then
+	    echo "Fixing interface: $net_if"
+            ifconfig ${net_if} -txcsum -rxcsum
+            ifconfig ${net_if} mtu 1400
+        else
+            echo "Warning: Could not detect default network interface. Network may fail."
+        fi
+	# Install packages.
+	pkg install -y git py311-ansible sudo
         ;;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     ansible-zero)
