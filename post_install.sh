@@ -28,6 +28,10 @@ cat << EOF
 EOF
 EOF2
         chmod a+x "${ansible_custom_facts_dir}/iocage.fact"
+	# Apply the hardware checksum and MTU bypass.
+	fix_vnet_interface
+	# Install packages.
+	pkg install -y git py311-ansible sudo syslog-ng
         # Ansible needs UTF-8
         echo "LANG=en_US.UTF-8" >> /root/.profile
         echo "LC_ALL=en_US.UTF-8" >> /root/.profile
@@ -52,6 +56,10 @@ cat << EOF
 EOF
 EOF2
         chmod a+x "${ansible_custom_facts_dir}/iocage.fact"
+	# Apply the hardware checksum and MTU bypass.
+	fix_vnet_interface
+	# Install packages.
+	pkg install -y git lnav py311-ansible sudo syslog-ng
         # Ansible needs UTF-8
         echo "LANG=en_US.UTF-8" >> /root/.profile
         echo "LC_ALL=en_US.UTF-8" >> /root/.profile
@@ -104,6 +112,10 @@ cat << EOF
 EOF
 EOF2
         chmod a+x "${ansible_custom_facts_dir}/iocage.fact"
+	# Apply the hardware checksum and MTU bypass.
+	fix_vnet_interface
+	# Install packages.
+	pkg install -y git py311-ansible sudo
         # Ansible needs UTF-8.
         echo "LANG=en_US.UTF-8" >> /root/.profile
         echo "LC_ALL=en_US.UTF-8" >> /root/.profile

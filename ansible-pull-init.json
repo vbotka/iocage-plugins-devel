@@ -3,11 +3,7 @@
   "plugin_schema": 2,
   "release": "15.0-RELEASE",
   "artifact": "https://github.com/vbotka/iocage-plugins-devel.git",
-  "pkgs": [
-    "git",
-    "py311-ansible",
-    "sudo"
-  ],
+  "pkgs": [],
   "packagesite": "http://pkg.FreeBSD.org/${ABI}/quarterly",
   "fingerprints": {
     "plugin-default": [
@@ -17,5 +13,8 @@
       }
     ]
   },
-  "official": false
+  "official": false,
+  "properties": {
+    "resolver": "options tcp;nameserver 1.1.1.1;nameserver 8.8.8.8"
+  }
 }
