@@ -10,15 +10,15 @@
 Install and configure syslog-ng client.
 - Install: ansible, git, sudo, syslog-ng
 - Run: post_install.sh
-- Repo: https://github.com/vbotka/ansible-conf-syslogng-client.git
-- Example: https://ansible-collection-freebsd.readthedocs.io/en/latest/examples/521/example.html
+- [Repo](https://github.com/vbotka/ansible-conf-syslogng-client.git)
+- [Example](https://ansible-collection-freebsd.readthedocs.io/en/latest/examples/521/example.html)
 
 ### ansible-pull-syslogng-server
 Install and configure syslog-ng server.
 - Install: ansible, git, lnav, sudo, syslog-ng
 - Run: post_install.sh
-- Repo: https://github.com/vbotka/ansible-conf-syslogng-server.git
-- Example: https://ansible-collection-freebsd.readthedocs.io/en/latest/examples/521/example.html
+- [Repo](https://github.com/vbotka/ansible-conf-syslogng-server.git)
+- [Example](https://ansible-collection-freebsd.readthedocs.io/en/latest/examples/521/example.html)
 
 ### ansible-pull-test
 Test ansible-pull
@@ -29,8 +29,8 @@ Test ansible-pull
 Test init configuration.
 - Install: ansible, git, sudo
 - Run: post_install.sh
-- Repo: https://github.com/vbotka/ansible-conf-init.git
-- Example: https://ansible-collection-freebsd.readthedocs.io/en/latest/examples/TBD/example.html
+- [Repo](https://github.com/vbotka/ansible-conf-init.git)
+- [Example](https://ansible-collection-freebsd.readthedocs.io/en/latest/examples/TBD/example.html)
 
 ## other iocage plugins
 
