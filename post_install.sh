@@ -4,6 +4,7 @@
 export FETCH_TIMEOUT=600
 
 plugin_name=$(hostname)
+ansible_vars="/root/ansible-vars"
 ansible_custom_facts_dir="/etc/ansible/facts.d"
 net_if=$(route -n get default | awk '/interface:/ {print $2}')
 
@@ -43,7 +44,8 @@ EOF2
             -i hosts \
             -U https://github.com/vbotka/ansible-conf-syslogng-client.git \
             -d /root/ansible-conf-syslogng-client \
-            -e "ansible_pull_mode=true" \
+            -e "ai_pull_mode=true" \
+            -e "ai_vars=${ansible_vars}" \
             pb-logclient.yml
         ;;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -71,7 +73,8 @@ EOF2
             -i hosts \
             -U https://github.com/vbotka/ansible-conf-syslogng-server.git \
             -d /root/ansible-conf-syslogng-server \
-            -e "ansible_pull_mode=true" \
+            -e "ai_pull_mode=true" \
+            -e "ai_vars=${ansible_vars}" \
             pb-logserv.yml
         ;;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -99,7 +102,8 @@ EOF2
             -i hosts \
             -U https://github.com/vbotka/ansible-conf-test.git \
             -d /root/ansible-conf-test \
-            -e "ansible_pull_mode=true" \
+            -e "ai_pull_mode=true" \
+            -e "ai_vars=${ansible_vars}" \
             pb-test.yml
         ;;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -127,7 +131,8 @@ EOF2
 	    -i hosts \
 	    -U https://github.com/vbotka/ansible-conf-init.git \
 	    -d /root/ansible-conf-init \
-            -e "ansible_pull_mode=true" \
+            -e "ai_pull_mode=true" \
+            -e "ai_vars=${ansible_vars}" \
 	    pb-init.yml
         ;;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
